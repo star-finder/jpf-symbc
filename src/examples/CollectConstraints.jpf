@@ -1,0 +1,8 @@
+target=CollectConstraints
+classpath=${jpf-symbc}/build/examples
+sourcepath=${jpf-symbc}/src/examples
+symbolic.method = CollectConstraints.test(sym#sym)
+#symbolic.collect_constraints=false
+#symbolic.db=no_solver
+symbolic.db=z3
+symbolic.optimizechoices=false

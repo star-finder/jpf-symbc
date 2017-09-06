@@ -1,0 +1,11 @@
+target = jsf.TestNode
+
+classpath = ${jpf-symbc}/build/examples
+
+sourcepath = ${jpf-symbc}/src/examples 
+
+symbolic.lazy = true
+
+symbolic.method=jsf.TestNode.foo(sym)
+
+listener = gov.nasa.jpf.symbc.heap.HeapSymbolicListener
