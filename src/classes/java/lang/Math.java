@@ -40,9 +40,9 @@ package java.lang;
 public class Math {
 	public static final double PI = 3.141592653589793;
 
-//	public static int toIntExact(long integer) {
-//		return (int)integer;
-//	}
+	public static int toIntExact(long integer) {
+		return (int)integer;
+	}
 	
 	public static double abs ( double a) {
 	    return (a < 0.0) ? -a : a;
