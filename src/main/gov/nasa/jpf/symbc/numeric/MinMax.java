@@ -50,6 +50,8 @@ public class MinMax {
 	public static int Debug_no_path_constraints = 0;
 	public static int Debug_no_path_constraints_sat = 0;
 	public static int Debug_no_path_constraints_unsat = 0;
+	
+	public static boolean verbose = false;
 
 	public static int UniqueId = 0; // Unique id for each SymbolicInteger or
 									// SymbolicReal created
@@ -301,34 +303,32 @@ public class MinMax {
 			assert min < max : "Illegal range for \"" + k + "\"";
 		}
 
-		// Display the bounds collected from the configuration
-		System.out.println("symbolic.min_int=" + minInt);
-		System.out.println("symbolic.min_long=" + minLong);
-		System.out.println("symbolic.min_short=" + minShort);
-		System.out.println("symbolic.min_byte=" + minByte);
-		System.out.println("symbolic.min_char=" + minChar);
-		for (String k : varMinIntMap.keySet()) {
-			System.out.println("symbolic.min_int_" + k + "="
-					+ varMinIntMap.get(k));
-		}
-		System.out.println("symbolic.max_int=" + maxInt);
-		System.out.println("symbolic.max_long=" + maxLong);
-		System.out.println("symbolic.max_short=" + maxShort);
-		System.out.println("symbolic.max_byte=" + maxByte);
-		System.out.println("symbolic.max_char=" + maxChar);
-		for (String k : varMaxIntMap.keySet()) {
-			System.out.println("symbolic.max_int_" + k + "="
-					+ varMaxIntMap.get(k));
-		}
-		System.out.println("symbolic.min_double=" + minDouble);
-		for (String k : varMinDoubleMap.keySet()) {
-			System.out.println("symbolic.min_double_" + k + "="
-					+ varMinDoubleMap.get(k));
-		}
-		System.out.println("symbolic.max_double=" + maxDouble);
-		for (String k : varMaxDoubleMap.keySet()) {
-			System.out.println("symbolic.max_double_" + k + "="
-					+ varMaxDoubleMap.get(k));
+		if (verbose) {
+			// Display the bounds collected from the configuration
+			System.out.println("symbolic.min_int=" + minInt);
+			System.out.println("symbolic.min_long=" + minLong);
+			System.out.println("symbolic.min_short=" + minShort);
+			System.out.println("symbolic.min_byte=" + minByte);
+			System.out.println("symbolic.min_char=" + minChar);
+			for (String k : varMinIntMap.keySet()) {
+				System.out.println("symbolic.min_int_" + k + "=" + varMinIntMap.get(k));
+			}
+			System.out.println("symbolic.max_int=" + maxInt);
+			System.out.println("symbolic.max_long=" + maxLong);
+			System.out.println("symbolic.max_short=" + maxShort);
+			System.out.println("symbolic.max_byte=" + maxByte);
+			System.out.println("symbolic.max_char=" + maxChar);
+			for (String k : varMaxIntMap.keySet()) {
+				System.out.println("symbolic.max_int_" + k + "=" + varMaxIntMap.get(k));
+			}
+			System.out.println("symbolic.min_double=" + minDouble);
+			for (String k : varMinDoubleMap.keySet()) {
+				System.out.println("symbolic.min_double_" + k + "=" + varMinDoubleMap.get(k));
+			}
+			System.out.println("symbolic.max_double=" + maxDouble);
+			for (String k : varMaxDoubleMap.keySet()) {
+				System.out.println("symbolic.max_double_" + k + "=" + varMaxDoubleMap.get(k));
+			}
 		}
 	}
 
