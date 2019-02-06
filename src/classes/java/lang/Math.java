@@ -96,23 +96,23 @@ public class Math {
 		  return (a <= b) ? a : b;
 	  }
 	  
-	  public static long round ( double d) {
-	  if (d > 0) {
-	        return (long) (d + 0.5d);
-	    } else {
-	        return (long) (d - 0.5d);
-	    }
-	  }
-	  
-	  public static int round ( float d) {
-		  if (d > 0) {
-		        return (int) (d + 0.5d);
-		    } else {
-		        return (int) (d - 0.5d);
-		    }
-		  }
+//	  public static long round ( double d) {
+//	  if (d > 0) {
+//	        return (long) (d + 0.5d);
+//	    } else {
+//	        return (long) (d - 0.5d);
+//	    }
+//	  }
+//	  
+//	  public static int round ( float d) {
+//		  if (d > 0) {
+//		        return (int) (d + 0.5d);
+//		    } else {
+//		        return (int) (d - 0.5d);
+//		    }
+//		  }
 	  public native static double sqrt ( double a) ;
-
+	  
 	  public native static double random ();
 
 	  
@@ -147,15 +147,19 @@ public class Math {
 
 	  // TODO: fix
 	  // Warning: this is different IEEE standard
-	  public static double rint ( double a) {
-		  System.err.println("Warning: Math.rint not modeled according to IEEE standard");
+//	  public static double rint ( double a) {
+//		  //System.err.println("Warning: Math.rint not modeled according to IEEE standard");
+//
+//		  if (a >= 0)
+//			  return (long) (a + 0.5);
+//		  else
+//			  return (long) (a - 0.5);
+//	  }
+	  
+	  public native static long round (double a);
 
-		  if (a >= 0)
-			  return (long) (a + 0.5);
-		  else
-			  return (long) (a - 0.5);
-	  }
-
+	  public native static double rint (double a);
+	  
 	  public native static double tan ( double a);
 
 	  public native static double sin ( double a);
@@ -167,4 +171,34 @@ public class Math {
 	  public static native double log10(double a);
 
 	  public static native double toRadians(double a);
+	  
+	  public native static double cbrt(double a);
+	  
+	  public native static double cosh(double a);
+	  
+	  public native static int decrementExact(int a);
+	  
+	  public native static double expm1(double a);
+	  
+	  public native static int getExponent(float a);
+	  
+	  public native static int incrementExact(int a);
+	  
+	  public native static double log1p(double a);
+	  
+	  public native static int negateExact(int a);
+	  
+	  public native static float nextDown(float a);
+	  
+	  public native static float nextUp(float a);
+	  
+	  public native static float signum(float a);
+	  
+	  public native static double sinh(double a);
+	  
+	  public native static double tanh(double a);
+	  
+	  public native static double toDegrees(double a);
+	  
+	  public native static float ulp(float a);
 }
