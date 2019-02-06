@@ -156,6 +156,8 @@ public class Math {
 //			  return (long) (a - 0.5);
 //	  }
 	  
+	  public native static int round (float a);
+	  
 	  public native static long round (double a);
 
 	  public native static double rint (double a);
